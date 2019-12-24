@@ -1,0 +1,28 @@
+<!---<!DOCTYPE html>
+<html>
+<head>
+
+</head>
+<body> -->
+{% extends 'layout.html' %}
+{% block title %} channels {% endblock %}
+{% block files %}
+<script src="{{ url_for('static',filename='js/channels.js')}}"></script>
+{% endblock %}
+{% block body %}
+
+<h1> you can create new channel</h1>
+<form>
+<input id="new_channel" type="text" name="new_channel" placeholder="create new chat room">
+<button  id ="create" type="submit">create</button>
+</form>
+<ul id="channels">
+    {% for channel in channels %}
+    <li> <a href="{{url_for('display_channel',channel=channel)}}">{{ channel }}</a></li>
+    {% endfor %}
+    
+    </ul>
+    
+{% endblock %}
+<!--</body>
+</html> -->

@@ -1,0 +1,32 @@
+{% extends 'layout.html' %}
+{% block title %}home{% endblock %}
+{% block files %}
+<script src="{{ url_for('static',filename='js/index.js')}}"></script>
+</script>
+<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/index.css') }}">
+{% endblock %}
+{% block body %}
+<p><button onclick="flib('#sign-up','#sign-in')" >sign up</button > &nbsp; 
+  <button onclick="flib('#sign-in','#sign-up')">sign in</button>
+</p>
+<div id="sign-in">
+ <h2 >sign in</h2>
+ <form method="GET">
+  <input  id= "signin-mail" type="email" placeholder="email"  name="mail">
+  <input id="signin-password" type="password" placeholder="password 6 letters at least" name="password">
+  <button type="submit" onclick="signIn(event)">sign in</button>
+ </form>
+</div>
+<div id="sign-up">
+<h1>sign up</h1>
+<form action="{{url_for('channels')}}" method="GET">
+<input  id= "mail" type="email" placeholder="email"  name="mail">
+<input id="password" type="password" placeholder="password " name="password">
+<input id="name" type="text" placeholder="display name" name="name">
+  <button type="submit" onclick="add_user(event)">sign up</button>
+</form>
+</div>
+
+
+{% endblock %}
+

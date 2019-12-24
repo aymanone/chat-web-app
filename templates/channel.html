@@ -1,0 +1,30 @@
+{% extends 'layout.html' %}
+{% block title %} channel {{data.channel}} {% endblock %}
+{% block files %}
+<script type="text/javascript" src="{{ url_for('static',filename='js/channel.js')}}"></script>
+<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/channel.css') }}">
+{% endblock %}
+{% block body %}
+	<h1>{{channel}}</h1>
+<main>
+	<div id="msgs-container">
+		{% for msg in data.msgs %}
+		<div class="msg-area">
+		<p><h1>{{msg.sender}}</h1></p>
+		<p>{{msg.message}}</p>
+	   </div>
+		{% endfor %}
+	</div>
+	<form id="msg-form"> 
+		<input id="msg-text" type="text" minlength="1" maxlength="150" name="msg" required>
+		<button  id="msg-sender" type="submit">send msg</button>
+
+	</form>
+	<form  method = "POST" 
+	enctype = "multipart/form-data" id="file-form">
+    <input type = "file" name = "file" id="file-name" required />
+     <input type = "submit" value="send file" id="file-submit"/>
+	</form>
+	<h3 id="error-area" class="success">enjoy the chat</h3>
+</main>
+{% endblock %}

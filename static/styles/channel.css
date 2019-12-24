@@ -1,0 +1,34 @@
+#msgs-container{
+    width:80%;
+    display:flex;
+    flex-direction: column;
+    align-items: stretch;
+    border: 1px red solid;
+    height: 80vh;
+    overflow-y: auto;
+}
+.msg-area{
+     background-color: aliceblue;
+     display:flex;
+     flex-direction: column;
+     align-items: stretch;
+     border:1px green solid;
+     
+}
+#msgs-container>div:last-child{
+    
+    display:flex;
+}
+
+#msg-text{
+    flex-basis: 80%;
+}
+#msg-sender{
+    flex-basis: 20%;
+}
+.success{
+  color:green;
+}
+.fail{
+  color:red;
+}

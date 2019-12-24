@@ -1,0 +1,17 @@
+{% extends 'layout.html' %}
+{% block title %} delete my messge {% endblock %}
+{% block files %}
+<script src="{{ url_for('static',filename='js/deleteUserMessages.js')}}"></script>
+{% endblock %}
+{% block body %}
+
+<h1 style="color:red;">  are you sure you want to do that</h1>
+<form >
+    <h2> give us your email and password please</h2>
+    <input  id= "mail" type="email" placeholder="email"  name="mail">
+    <input id="password" type="password" placeholder="password " name="password">
+    <button type="submit" id="del">yes delete</button>
+</form>
+
+    
+{% endblock %}
